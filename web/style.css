@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #000;
+}
+
+#app {
+  display: flex;
+  height: 100vh;
+}
+
+/* 三栏 */
+.pane {
+  height: 100%;
+}
+
+#leftPane {
+  width: 25%;
+  border-right: 1px solid #ddd;
+  overflow: hidden;
+}
+
+#centerPane {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+#rightPane {
+  width: 25%;
+  border-left: 1px solid #ddd;
+}
+
+/* 隐藏 */
+.hidden {
+  display: none;
+}
+
+/* 聊天区（唯一滚动区域） */
+#chatBox {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+/* 消息气泡 */
+.msg {
+  max-width: 70%;
+  margin-bottom: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  white-space: pre-wrap;
+}
+
+.msg.user {
+  margin-left: auto;
+  border: 1px solid #000;
+}
+
+.msg.ai {
+  margin-right: auto;
+  background: #f2f2f2;
+}
+
+/* loading 作为 AI 消息 */
+.msg.loading {
+  background: none;
+  padding: 8px;
+}
+
+/* spinner */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ddd;
+  border-top: 2px solid #000;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* 工具栏（贴着输入框） */
+#chatToolbar {
+  height: 48px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+  background: #fff;
+}
+
+#chatToolbar button {
+  background: none;
+  border: 1px solid #000;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+#chatToolbar button.active {
+  background: #000;
+  color: #fff;
+}
+
+/* 输入区 */
+#inputBar {
+  border-top: 1px solid #ddd;
+  display: flex;
+  padding: 8px;
+  gap: 8px;
+}
+
+#chatInput {
+  flex: 1;
+  height: 48px;
+  resize: none;
+}
+
+#sendBtn {
+  padding: 0 16px;
+}
+
+/* 左侧日志 */
+.logBlock {
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+}
+
+.logHeader {
+  padding: 6px;
+  border-bottom: 1px solid #ddd;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logContent {
+  flex: 1;
+  padding: 6px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+}

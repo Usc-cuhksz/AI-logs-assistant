@@ -1,0 +1,3 @@
+类型：任务
+日期：2026-01-19
+内容：了解open interpreter、classaudio等项目的实现逻辑。

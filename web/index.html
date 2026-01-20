@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI 日志系统</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="app">
+
+  <!-- 左侧：日志区 -->
+  <div id="leftPane" class="pane hidden"></div>
+
+  <!-- 中间：对话区 -->
+  <div id="centerPane" class="pane center">
+
+    <!-- 对话内容区（可滚动） -->
+    <div id="chatBox"></div>
+
+    <!-- 输入辅助工具栏（紧贴输入框上方） -->
+    <div id="chatToolbar">
+      <button id="toggleLogs">☰ Logs</button>
+
+      <button class="logBtn" data-log="tasks">TASK</button>
+      <button class="logBtn" data-log="feedback">FEEDBACK</button>
+      <button class="logBtn" data-log="events">EVENT</button>
+      <button class="logBtn" data-log="goals">GOAL</button>
+
+      <button id="toggleHistory">◯ Use History</button>
+    </div>
+
+    <!-- 输入区 -->
+    <div id="inputBar">
+      <textarea id="chatInput"
+        placeholder="输入内容，Enter 发送，Shift+Enter 换行"></textarea>
+      <button id="sendBtn">Send</button>
+    </div>
+
+  </div>
+
+  <!-- 右侧：预留 -->
+  <div id="rightPane" class="pane"></div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
